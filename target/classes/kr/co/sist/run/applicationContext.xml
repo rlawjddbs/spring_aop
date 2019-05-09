@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:annotation-config/>
+	<context:component-scan base-package="kr.co.sist"/>
+	<context:component-scan base-package="kr.co.sist.dao"/>
+	<context:component-scan base-package="kr.co.sist.dao.*"/>
+	<context:component-scan base-package="kr.co.sist.service"/>
+	<context:component-scan base-package="kr.co.sist.service.*"/>
+	
+	<!-- AOP : annotation 을 사용하기 위해 필요한 속성-->
+	<!--이렇게 가져다쓸때 에러가 나는 경우 위에 네임스페이스(beans 태그)에서 에러가 나는 경우도 있다. 그냥 참고. -->
+	<aop:aspectj-autoproxy/>
+</beans>
